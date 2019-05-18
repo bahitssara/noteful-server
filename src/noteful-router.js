@@ -20,5 +20,25 @@ notefulRouter
             .catch(next)
     })
 
+notefulRouter
+    .route('/notes/:id')
+    .all((req, res, next) => {
+        const { id } = req.params;
+        NotefulService.getById(req.app.get('db'), id)
+            .then(note => {
+                if(!note) {
+                    return res
+                    .status(404)
+                    .send({ error: { message: `Note doesn't exists`} })
+                }
+                res.note = note
+                next()
+            })
+            .catch(next)
+    })
+    .get((req, res) => {
+        res.json(serializedNotes(res.note))
+    })
+
 module.exports = notefulRouter
 
