@@ -3,6 +3,7 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
+const notefulRouter = require('./noteful-router')
 const { NODE_ENV } = require('./config')
 
 const app = express()
@@ -15,6 +16,7 @@ app.use(morgan(morganOption))
 app.use(cors())
 app.use(helmet())
 
+app.use(notefulRouter)
 app.get('/', (req,res) => {
     res.send('Hello, world!')
 })
