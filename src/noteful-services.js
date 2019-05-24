@@ -19,7 +19,7 @@ const NotefulService = {
             .where({ id })
             .delete()
     },
-    updateArticle(knex, id, newNoteFields) {
+    updateNotes(knex, id, newNoteFields) {
         return knex('noteful_notes')
             .where({ id })
             .update(newNoteFields)
