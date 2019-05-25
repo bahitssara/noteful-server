@@ -9,3 +9,4 @@ CREATE TABLE noteful_notes (
     content TEXT NOT NULL,
     date_published TIMESTAMP DEFAULT now() NOT NULL
 );
+
