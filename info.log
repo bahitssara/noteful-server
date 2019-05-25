@@ -147,3 +147,4 @@
 {"message":"Title is required","level":"error"}
 {"message":"Title is required","level":"error"}
 {"message":"Unauthorized request to path: /notes","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
