@@ -10,6 +10,6 @@ const db = knex({
 
 app.set('db', db)
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Sever is listening at http://localhost:${PORT}`)
 })
