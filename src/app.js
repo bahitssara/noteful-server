@@ -36,6 +36,7 @@ app.get('/', (req,res) => {
 
 app.use(function errorHandler(error, req, res, next) {
     let response
+
     if(NODE_ENV === 'production') {
         response = { error: error.message, env:[process.env.DATABASE_URL, process.env.PORT] }
     } else {
