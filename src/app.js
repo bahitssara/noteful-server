@@ -38,7 +38,7 @@ app.use(function errorHandler(error, req, res, next) {
     let response
 
     if(NODE_ENV === 'production') {
-        response = { error: error.message, env:[process.env.DATABASE_URL, process.env.PROD_MIGRATION_DB_PORT] }
+        response = { error: error.message, env:[process.env.DATABASE_URL] }
     } else {
         console.error(error)
         response = { message: error.message, error }
